@@ -2,20 +2,48 @@ package com.financial.spend.analyzer.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * @author Sarang
  *
  */
+@Entity
+@Table(name = "transaction")
 public class TransactionEntity {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "c_tran_id", columnDefinition = "serial")
 	private Long transactionId;
+
+	@Column(name = "c_tran_num", nullable = false)
 	private String transactioNumber;
+
+	@Column(name = "c_acco_acctid", nullable = false)
 	private String accountId;
+
+	@Column(name = "d_tran_date", nullable = false)
 	private Date transactioDate;
+
+	@Column(name = "e_tran_amount", nullable = false)
 	private Double transactioAmount;
+
+	@Column(name = "a_tran_type", nullable = false)
 	private String transactioType;
+
+	@Column(name = "a_tran_description", nullable = true)
 	private String transactioDescription;
+
+	@Column(name = "a_tran_status", nullable = false)
 	private String transactionStatus;
+
+	@Column(name = "a_tran_currbal", nullable = false)
 	private Double currBalance;
 
 	/**
