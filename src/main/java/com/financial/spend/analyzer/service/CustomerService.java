@@ -1,5 +1,5 @@
 package com.financial.spend.analyzer.service;
 
-public interface CustomerServiceImpl {
+public interface CustomerService {
 
 }
