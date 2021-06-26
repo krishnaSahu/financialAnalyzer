@@ -4,9 +4,12 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -26,7 +29,7 @@ public class TransactionEntity {
 	private String transactioNumber;
 
 	@Column(name = "c_acco_acctid", nullable = false)
-	private String accountId;
+	private Long accountId;
 
 	@Column(name = "d_tran_date", nullable = false)
 	private Date transactionDate;
@@ -46,6 +49,10 @@ public class TransactionEntity {
 	@Column(name = "a_tran_currbal", nullable = false)
 	private Double currBalance;
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "c_acco_acctid", insertable = false, updatable = false, nullable = true)
+	private AccounEntity accountEntity;
+
 	public Long getTransactionId() {
 		return transactionId;
 	}
@@ -60,14 +67,6 @@ public class TransactionEntity {
 
 	public void setTransactioNumber(String transactioNumber) {
 		this.transactioNumber = transactioNumber;
-	}
-
-	public String getAccountId() {
-		return accountId;
-	}
-
-	public void setAccountId(String accountId) {
-		this.accountId = accountId;
 	}
 
 	public Date getTransactionDate() {
@@ -116,6 +115,22 @@ public class TransactionEntity {
 
 	public void setCurrBalance(Double currBalance) {
 		this.currBalance = currBalance;
+	}
+
+	public Long getAccountId() {
+		return accountId;
+	}
+
+	public void setAccountId(Long accountId) {
+		this.accountId = accountId;
+	}
+
+	public AccounEntity getAccountEntity() {
+		return accountEntity;
+	}
+
+	public void setAccountEntity(AccounEntity accountEntity) {
+		this.accountEntity = accountEntity;
 	}
 
 }
