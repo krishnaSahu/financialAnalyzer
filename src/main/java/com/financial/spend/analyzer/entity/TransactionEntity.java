@@ -29,16 +29,16 @@ public class TransactionEntity {
 	private String accountId;
 
 	@Column(name = "d_tran_date", nullable = false)
-	private Date transactioDate;
+	private Date transactionDate;
 
 	@Column(name = "e_tran_amount", nullable = false)
-	private Double transactioAmount;
+	private Double transactionAmount;
 
 	@Column(name = "a_tran_type", nullable = false)
-	private String transactioType;
+	private String transactionType;
 
 	@Column(name = "a_tran_description", nullable = true)
-	private String transactioDescription;
+	private String transactionDescription;
 
 	@Column(name = "a_tran_status", nullable = false)
 	private String transactionStatus;
@@ -46,9 +46,6 @@ public class TransactionEntity {
 	@Column(name = "a_tran_currbal", nullable = false)
 	private Double currBalance;
 
-	/**
-	 * @return transactionId
-	 */
 	public Long getTransactionId() {
 		return transactionId;
 	}
@@ -57,9 +54,6 @@ public class TransactionEntity {
 		this.transactionId = transactionId;
 	}
 
-	/**
-	 * @return transactionNumber
-	 */
 	public String getTransactioNumber() {
 		return transactioNumber;
 	}
@@ -68,9 +62,6 @@ public class TransactionEntity {
 		this.transactioNumber = transactioNumber;
 	}
 
-	/**
-	 * @return accountId
-	 */
 	public String getAccountId() {
 		return accountId;
 	}
@@ -79,54 +70,37 @@ public class TransactionEntity {
 		this.accountId = accountId;
 	}
 
-	/**
-	 * @return transactionDate
-	 */
-	public Date getTransactioDate() {
-		return transactioDate;
+	public Date getTransactionDate() {
+		return transactionDate;
 	}
 
-	public void setTransactioDate(Date transactioDate) {
-		this.transactioDate = transactioDate;
+	public void setTransactionDate(Date transactionDate) {
+		this.transactionDate = transactionDate;
 	}
 
-	/**
-	 * @return transactionAmout
-	 */
-	public Double getTransactioAmount() {
-		return transactioAmount;
+	public Double getTransactionAmount() {
+		return transactionAmount;
 	}
 
-	public void setTransactioAmount(Double transactioAmount) {
-		this.transactioAmount = transactioAmount;
+	public void setTransactionAmount(Double transactionAmount) {
+		this.transactionAmount = transactionAmount;
 	}
 
-	/**
-	 * @return transactionType
-	 */
-
-	public String getTransactioType() {
-		return transactioType;
+	public String getTransactionType() {
+		return transactionType;
 	}
 
-	public void setTransactioType(String transactioType) {
-		this.transactioType = transactioType;
+	public void setTransactionType(String transactionType) {
+		this.transactionType = transactionType;
 	}
 
-	/**
-	 * @return transactionDescription
-	 */
-	public String getTransactioDescription() {
-		return transactioDescription;
+	public String getTransactionDescription() {
+		return transactionDescription;
 	}
 
-	public void setTransactioDescription(String transactioDescription) {
-		this.transactioDescription = transactioDescription;
+	public void setTransactionDescription(String transactionDescription) {
+		this.transactionDescription = transactionDescription;
 	}
-
-	/**
-	 * @return transactionStatus
-	 */
 
 	public String getTransactionStatus() {
 		return transactionStatus;
@@ -135,10 +109,6 @@ public class TransactionEntity {
 	public void setTransactionStatus(String transactionStatus) {
 		this.transactionStatus = transactionStatus;
 	}
-
-	/**
-	 * @return current Bal
-	 */
 
 	public Double getCurrBalance() {
 		return currBalance;
