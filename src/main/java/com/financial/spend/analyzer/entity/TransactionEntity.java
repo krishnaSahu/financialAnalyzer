@@ -2,25 +2,50 @@ package com.financial.spend.analyzer.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * @author Sarang
  *
  */
+@Entity
+@Table(name = "transaction")
 public class TransactionEntity {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "c_tran_id", columnDefinition = "serial")
 	private Long transactionId;
+
+	@Column(name = "c_tran_num", nullable = false)
 	private String transactioNumber;
+
+	@Column(name = "c_acco_acctid", nullable = false)
 	private String accountId;
-	private Date transactioDate;
-	private Double transactioAmount;
-	private String transactioType;
-	private String transactioDescription;
+
+	@Column(name = "d_tran_date", nullable = false)
+	private Date transactionDate;
+
+	@Column(name = "e_tran_amount", nullable = false)
+	private Double transactionAmount;
+
+	@Column(name = "a_tran_type", nullable = false)
+	private String transactionType;
+
+	@Column(name = "a_tran_description", nullable = true)
+	private String transactionDescription;
+
+	@Column(name = "a_tran_status", nullable = false)
 	private String transactionStatus;
+
+	@Column(name = "a_tran_currbal", nullable = false)
 	private Double currBalance;
 
-	/**
-	 * @return transactionId
-	 */
 	public Long getTransactionId() {
 		return transactionId;
 	}
@@ -29,9 +54,6 @@ public class TransactionEntity {
 		this.transactionId = transactionId;
 	}
 
-	/**
-	 * @return transactionNumber
-	 */
 	public String getTransactioNumber() {
 		return transactioNumber;
 	}
@@ -40,9 +62,6 @@ public class TransactionEntity {
 		this.transactioNumber = transactioNumber;
 	}
 
-	/**
-	 * @return accountId
-	 */
 	public String getAccountId() {
 		return accountId;
 	}
@@ -51,54 +70,37 @@ public class TransactionEntity {
 		this.accountId = accountId;
 	}
 
-	/**
-	 * @return transactionDate
-	 */
-	public Date getTransactioDate() {
-		return transactioDate;
+	public Date getTransactionDate() {
+		return transactionDate;
 	}
 
-	public void setTransactioDate(Date transactioDate) {
-		this.transactioDate = transactioDate;
+	public void setTransactionDate(Date transactionDate) {
+		this.transactionDate = transactionDate;
 	}
 
-	/**
-	 * @return transactionAmout
-	 */
-	public Double getTransactioAmount() {
-		return transactioAmount;
+	public Double getTransactionAmount() {
+		return transactionAmount;
 	}
 
-	public void setTransactioAmount(Double transactioAmount) {
-		this.transactioAmount = transactioAmount;
+	public void setTransactionAmount(Double transactionAmount) {
+		this.transactionAmount = transactionAmount;
 	}
 
-	/**
-	 * @return transactionType
-	 */
-
-	public String getTransactioType() {
-		return transactioType;
+	public String getTransactionType() {
+		return transactionType;
 	}
 
-	public void setTransactioType(String transactioType) {
-		this.transactioType = transactioType;
+	public void setTransactionType(String transactionType) {
+		this.transactionType = transactionType;
 	}
 
-	/**
-	 * @return transactionDescription
-	 */
-	public String getTransactioDescription() {
-		return transactioDescription;
+	public String getTransactionDescription() {
+		return transactionDescription;
 	}
 
-	public void setTransactioDescription(String transactioDescription) {
-		this.transactioDescription = transactioDescription;
+	public void setTransactionDescription(String transactionDescription) {
+		this.transactionDescription = transactionDescription;
 	}
-
-	/**
-	 * @return transactionStatus
-	 */
 
 	public String getTransactionStatus() {
 		return transactionStatus;
@@ -107,10 +109,6 @@ public class TransactionEntity {
 	public void setTransactionStatus(String transactionStatus) {
 		this.transactionStatus = transactionStatus;
 	}
-
-	/**
-	 * @return current Bal
-	 */
 
 	public Double getCurrBalance() {
 		return currBalance;
