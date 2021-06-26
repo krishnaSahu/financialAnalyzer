@@ -1,5 +1,9 @@
 package com.financial.spend.analyzer.dao;
 
-public interface TransactionRepo {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.financial.spend.analyzer.entity.TransactionEntity;
+
+public interface TransactionRepo extends JpaRepository<TransactionEntity, Long> {
 
 }
